@@ -1,0 +1,26 @@
+Proyecto walkman HI-FI
+Plan de Trabajo por Áreas (Integración Progresiva)
+
+Fase 1: El Cerebro y los Datos (SD)
+Conectar el ESP32 al módulo MicroSD.
+Código básico para inicializar la tarjeta, listar los archivos de música en el monitor serie y asegurar que la velocidad de lectura SPI sea suficiente.
+
+Fase 2: Audio Físico (I2S + DAC)
+Conectar el PCM5102 al ESP32.
+Integrar una librería de audio para reproducir un archivo flac desde la SD directamente hacia el DAC.
+
+Fase 3: Interfaz de Usuario
+Conectar la pantalla OLED, los botones y el dial (encoder rotativo).
+Programar un menú sencillo para navegar por las carpetas de la SD, dar play/pausa y subir/bajar volumen por software.
+
+Fase 4: Audio Inalámbrico (Bluetooth)
+Desarrollar un código separado que tome un archivo de audio y lo envíe por Bluetooth a un parlante usando el protocolo A2DP.
+Por bluetooth sólo se podrían reproducir canciones mp3.
+Implementar la lógica para cambiar entre salida I2S (cable) y Bluetooth desde el menú.
+
+Fase 5: Alimentación y Hardware Final
+Ensamblar el TP4056, la batería y el regulador LDO.
+Verificar que no haya "ruido" de interferencia en los auriculares (el ESP32 suele meter ruido del Wi-Fi/Bluetooth si las tierras no están bien ruteadas).
+
+Fase 6: Integración Total del "Proyecto: Walkman Hi-Fi"
+Unir todos los códigos usando FreeRTOS para que la música no se corte mientras navegas por el menú de la pantalla OLED.
